@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-stroke-2 {
+    -webkit-text-stroke: 9px #243041;
+  }
+
+  .text-stroke-4 {
+    -webkit-text-stroke: 4px #243041;
+  }
+}
+
+@font-face {
+  font-family: 'Mouse Memoirs';
+  src: url("/assets/fonts/MouseMemoirs-Regular.ttf") format('truetype');
+  fallback:sans-serif;
+}
+
+html {
+  font-family: "Mouse Memoirs",sans-serif;
+}
