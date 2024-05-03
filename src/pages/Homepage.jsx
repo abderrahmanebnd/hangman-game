@@ -1,7 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
 function Homepage() {
+  const navigate = useNavigate();
+  function handleNavigation(route) {
+    navigate(route);
+  }
   return (
     <div
       className="flex 
@@ -15,7 +19,10 @@ function Homepage() {
           alt="logo"
         />
 
-        <NavLink to="categories" className="relative">
+        <button
+          onClick={() => handleNavigation("categories")}
+          className="relative cursor-pointer w-fit m-auto rounded-full block"
+        >
           <img
             src="/assets/images/icon-play-container.svg"
             className="md:w-48 m-auto xl:w-56"
@@ -26,13 +33,13 @@ function Homepage() {
             className=" absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2  md:w-28 w-20"
             alt="play-icon-bg"
           />
-        </NavLink>
-        <NavLink
-          to="/how-to-play"
+        </button>
+        <div
+          onClick={() => handleNavigation("how-to-play")}
           className="block mt-14 md:mt-10 md:h-16 xl:h-24 "
         >
           <Button>How To Play</Button>
-        </NavLink>
+        </div>
       </section>
     </div>
   );

@@ -1,31 +1,13 @@
-import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import CustomText from "../ui/CustomText";
 import HowToPlayItem from "../ui/HowToPlayItem";
+import HeaderOnScroll from "../ui/HeaderOnScroll";
 
 function HowToPlay() {
-  const [isHeaderShadowed, setIsHeaderShadowed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      setIsHeaderShadowed(scrollTop > 0); // Set to true if scroll position is greater than 0
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
-      <header className="flex justify-between items-center left-0 right-0 p-5 fixed sm:justify-start sm:p-10">
-        {isHeaderShadowed && (
-          <div className="absolute bottom-0 top-0 right-0 left-0 -z-10 h-36 bg-gradient-to-b from from-purple-950 to-purple-950/5 opacity-1 transition-opacity duration-500"></div>
-        )}
-
+      <header className="flex justify-between items-center left-0 right-0 p-5 fixed sm:justify-start sm:p-10 flex-wrap">
+        <HeaderOnScroll />
         <NavLink to="/">
           <img
             src="/assets/images/icon-back.svg"
