@@ -3,17 +3,12 @@
 This is a solution to the [Hangman game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/hangman-game-rsQiSVLGWn). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
+- [Built with](#built-with)
 - [Author](#author)
 
-## Overview
 
 ### The challenge
 
@@ -32,38 +27,16 @@ Users should be able to:
 
 ### Screenshot
 
-![Home Page Of the App](2024-03-22-13-14-59.png)
-![Game Section](2024-03-22-13-16-12.png)
-![](2024-03-22-13-17-46.png)
-![](2024-03-22-13-21-59.png)
+Not available yet :{
 
 ### Links
 
-- Solution URL: [Hangman Game](https://github.com/Tayoakosile/hangman-game)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
-
-## My process
+Not available yet :{
 
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
 - [TailwindCSS](https://tailwindcss.com/) - For styles
 
-### What I learned
-
-- How to Properly use the `useContext` hook in React as a global State Manager
-
-### Useful resources
-
-- [Hangman Game](https://hangmanwordgame.com/) - This helped me get an overview of the game and how the rule works.
-
 ## Author
-
-- Website - [Tayo Akosile](https://github.com/Tayoakosile)
-- Frontend Mentor - [@tayoakosile](https://www.frontendmentor.io/profile/tayoakosile)
-- Twitter - [@tayo_akosile](https://www.twitter.com/tayo_akosile)
-- LinkedIn - [@tayo_akosile](https://www.twitter.com/tayo_akosile)
-
-///styling : tailwind css ;
-animation:framer motion ;
-context Api with dispatch (revise dispatch) state managment ;
+Not built yet :{
