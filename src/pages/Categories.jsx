@@ -1,7 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import HeaderOnScroll from "../ui/HeaderOnScroll";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import HeaderOnScroll from "../ui/HeaderOnScroll";
 import CustomText from "../ui/CustomText";
 import Category from "../ui/Category";
 
@@ -12,7 +11,7 @@ function Categories() {
     fetch("/data/data.json")
       .then((response) => response.json())
       .then((jsonData) => {
-        setCategories(Object.keys(jsonData.categories));
+        setCategories(Object.entries(jsonData.categories));
       })
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
@@ -30,10 +29,15 @@ function Categories() {
         </NavLink>
         <CustomText>Pick a Category</CustomText>
       </header>
-      <ul className="min-h-screen content-center place-items-center grid grid-cols-1 md:grid-cols-2  gap-7 container m-auto px-16 py-32 sm:py-40 lg:grid-cols-3 lg:py-52">
-        {categories.map((item, index) => (
-          <Category data={item} key={index} />
-        ))}
+      <ul className="min-h-screen content-center place-items-center grid grid-cols-1 md:grid-cols-2 gap-7 container m-auto px-16 py-32 sm:py-40 lg:grid-cols-3 lg:py-52">
+        {categories.map(
+          (
+            [category, categoryData],
+            index // Destructure category and categoryData from each entry
+          ) => (
+            <Category data={categoryData} category={category} key={index} /> // Pass categoryData as prop
+          )
+        )}
       </ul>
     </>
   );

@@ -12,10 +12,10 @@ function Homepage() {
       justify-center
       items-center  min-h-screen"
     >
-      <section className=" bg-no-repeat my-20 relative bg-mobile-playBg h-96 bg-cover  md:bg-tablet-playBg md:w-[500px] md:h-[430px] xl:bg-desktop-playBg xl:w-[692px] xl:h-[600px] ">
+      <section className="playbackgroundStyle my-20">
         <img
           src="/assets/images/heading/mobile-heading.svg"
-          className="m-auto w-3/4 -mt-12 mb-10 md:-mt-20 md:mb-5 md:w-2/3"
+          className="m-auto w-3/4 -mt-12 mb-10 md:-mt-20 md:mb-1 md:w-3/4"
           alt="logo"
         />
 
@@ -25,12 +25,12 @@ function Homepage() {
         >
           <img
             src="/assets/images/icon-play-container.svg"
-            className="md:w-48 m-auto xl:w-56"
+            className="md:w-44 m-auto xl:w-56"
             alt="play-container-bg"
           />
           <img
             src="/assets/images/icon-play.svg"
-            className=" absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2  md:w-28 w-20"
+            className=" absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2  md:w-24 w-20"
             alt="play-icon-bg"
           />
         </button>

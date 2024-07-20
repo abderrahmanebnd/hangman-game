@@ -12,10 +12,30 @@
   }
 }
 
+@layer components {
+  .playbackgroundStyle {
+    @apply bg-no-repeat bg-mobile-playBg h-96 bg-cover;
+
+  /* Media queries for tablet and desktop */
+    @screen md {
+      width: 500px;
+      height: 430px;
+      background-image: url("/assets/images/hman_tablet-play-bg.svg");
+    }
+  
+    @screen xl {
+      width: 692px;
+      height: 600px;
+      background-image: url("/assets/images/hman_desktop-play-bg.svg");
+    }
+  }
+  }
+
+
 @font-face {
   font-family: 'Mouse Memoirs';
   src: url("/assets/fonts/MouseMemoirs-Regular.ttf") format('truetype');
-  fallback:sans-serif;
+  fallback:Arial,sans-serif;
 }
 
 html {

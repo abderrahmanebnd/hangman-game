@@ -2,19 +2,23 @@ import { useDispatch } from "react-redux";
 import { pickedCategory } from "../slices/game";
 import { useNavigate } from "react-router-dom";
 
-function Category({ data }) {
+function Category({ category, data }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  function handlePickCategory(category) {
-    dispatch(pickedCategory(category));
+
+  function handlePickCategory(category, data) {
+    dispatch(pickedCategory(category, data));
     navigate("/game");
   }
+
   return (
     <li
-      className="uppercase tracking-wide text-white shadow-primary-shadow cursor-pointer bg-blue-700 text-center hover:bg-blue-600 transition-colors duration-200 w-full p-5 rounded-2xl text-2xl md:p-7 md:rounded-3xl md:text-4xl lg:p-10 lg:rounded-5xl lg:text-5xl"
-      onClick={() => handlePickCategory(data)}
+      className="shadow-primary-shadow cursor-pointer bg-blue-700 text-center hover:bg-blue-600 transition-colors duration-200 w-full  rounded-2xl   md:rounded-3xl   lg:rounded-5xl "
+      onClick={() => handlePickCategory(category, data)}
     >
-      {data}
+      <button className="text-white uppercase tracking-wide text-2xl md:text-4xl lg:text-5xl block text-center p-5 md:p-7 lg:p-10 w-full focus:ring-4 ring-blue-600 ring-offset-4 outline-none border-none  ">
+        {category}
+      </button>
     </li>
   );
 }
