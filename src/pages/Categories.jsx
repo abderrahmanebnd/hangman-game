@@ -32,10 +32,10 @@ function Categories() {
       <ul className="min-h-screen content-center place-items-center grid grid-cols-1 md:grid-cols-2 gap-7 container m-auto px-16 py-32 sm:py-40 lg:grid-cols-3 lg:py-52">
         {categories.map(
           (
-            [category, categoryData],
-            index // Destructure category and categoryData from each entry
+            [category, categoryData], // Destructure category and categoryData from each entry
+            index
           ) => (
-            <Category data={categoryData} category={category} key={index} /> // Pass categoryData as prop
+            <Category data={categoryData} category={category} key={index} />
           )
         )}
       </ul>

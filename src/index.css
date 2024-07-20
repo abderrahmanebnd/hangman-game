@@ -31,13 +31,6 @@
   }
   }
 
-
-@font-face {
-  font-family: 'Mouse Memoirs';
-  src: url("/assets/fonts/MouseMemoirs-Regular.ttf") format('truetype');
-  fallback:Arial,sans-serif;
-}
-
 html {
   font-family: "Mouse Memoirs",sans-serif;
 }
