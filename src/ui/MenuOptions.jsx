@@ -13,7 +13,7 @@ export function Overlay() {
 function MenuOptions() {
   const [show, setShow] = useState(false);
 
-  const { loser } = useSelector((store) => store.game);
+  const loser = useSelector((store) => store.game.loser);
   const navigate = useNavigate();
 
   function handleShowMenu() {

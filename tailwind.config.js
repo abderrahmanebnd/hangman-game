@@ -19,6 +19,10 @@ export default {
         "tablet-playBg": "url('/assets/images/hman_tablet-play-bg.svg')",
         "desktop-playBg": "url('/assets/images/hman_desktop-play-bg.svg')",
       },
+      backgroundColor: {
+        "clr-bg": "#2463ff",
+        "clr-highlight": "#3c74ff",
+      },
       boxShadow: {
         "primary-shadow":
           "inset 0 -0.125rem 0 0.1875rem #140e66, inset 0 0.0625rem 0 0.375rem #3c74ff ",

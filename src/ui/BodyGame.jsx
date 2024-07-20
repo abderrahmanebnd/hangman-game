@@ -3,10 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { pickedCategory } from "../slices/game";
 import RandomLetters from "./RandomLetters";
 import WordLetters from "./WordLetters";
+import { addRandomLetters } from "../utils/helpers";
 
 function BodyGame() {
   const dispatch = useDispatch();
-  const { category, categoryData } = useSelector((state) => state.game);
+  const randomWord = useSelector((state) => state.game.randomWord);
+  const category = useSelector((state) => state.game.category);
+  const categoryData = useSelector((state) => state.game.categoryData);
+  const randomLetters = addRandomLetters(randomWord);
 
   useEffect(() => {
     // Dispatch pickedCategory action when component mounts to ensure randomWord is generated
@@ -23,9 +27,9 @@ function BodyGame() {
   }, [category, categoryData, dispatch]);
 
   return (
-    <main>
+    <main className="">
       <WordLetters />
-      <RandomLetters />
+      <RandomLetters randomLetters={randomLetters} />
     </main>
   );
 }
