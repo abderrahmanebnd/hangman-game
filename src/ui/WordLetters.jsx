@@ -1,9 +1,38 @@
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setWinner } from "../slices/game";
 
 function WordLetters() {
   const { randomWord, guessedLetters } = useSelector((store) => store.game);
-
+  const dispatch = useDispatch();
   const displayWord = randomWord.split("");
+  const [hasInteracted, setHasInteracted] = useState(false);
+
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      setHasInteracted(true);
+    };
+
+    window.addEventListener("click", handleUserInteraction);
+
+    return () => {
+      window.removeEventListener("click", handleUserInteraction);
+    };
+  }, []);
+
+  useEffect(() => {
+    const allGuessed = displayWord?.every(
+      (letter) => letter === " " || guessedLetters.includes(letter)
+    );
+
+    if (allGuessed) {
+      dispatch(setWinner());
+      if (hasInteracted) {
+        const audio = new Audio("/assets/audio/user-won.mp3");
+        audio.play();
+      }
+    }
+  }, [guessedLetters, dispatch, displayWord, hasInteracted]);
 
   return (
     <ul className="container m-auto flex justify-center items-center gap-1 px-10 flex-wrap">

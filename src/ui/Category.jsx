@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { pickedCategory } from "../slices/game";
+import { startGame } from "../slices/game";
 import { useNavigate } from "react-router-dom";
 
 function Category({ category, data }) {
@@ -7,8 +7,8 @@ function Category({ category, data }) {
   const navigate = useNavigate();
 
   function handlePickCategory(category, data) {
-    dispatch(pickedCategory(category, data));
-    navigate("/game");
+    dispatch(startGame(category, data));
+    navigate("/game", { replace: true });
   }
 
   return (

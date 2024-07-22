@@ -30,15 +30,26 @@
 // export default RandomLetters;
 
 import { useDispatch, useSelector } from "react-redux";
-import { guessLetter } from "../slices/game";
+import { addTry, guessLetter } from "../slices/game";
 
 function RandomLetters({ randomLetters }) {
   const dispatch = useDispatch();
-  const { guessedLetters } = useSelector((store) => store.game);
-
+  const guessedLetters = useSelector((store) => store.game.guessedLetters);
+  const randomWord = useSelector((store) => store.game.randomWord);
+  const loser = useSelector((store) => store.game.loser);
   const handleGuess = (letter) => {
     if (!guessedLetters.includes(letter)) {
       dispatch(guessLetter(letter));
+    }
+    if (!randomWord.includes(letter)) {
+      dispatch(addTry());
+      const audio = new Audio("/assets/audio/invalid.mp3");
+      audio.play();
+    } else {
+      if (!loser) {
+        const audio = new Audio("/assets/audio/valid.wav");
+        audio.play();
+      }
     }
   };
 

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import CustomText from "../ui/CustomText";
+import CustomText from "../ui/common/CustomText";
 import HowToPlayItem from "../ui/HowToPlayItem";
-import HeaderOnScroll from "../ui/HeaderOnScroll";
+import HeaderOnScroll from "../ui/common/HeaderOnScroll";
 
 function HowToPlay() {
   return (
@@ -13,6 +13,8 @@ function HowToPlay() {
             src="/assets/images/icon-back.svg"
             className="w-12 sm:w-16 cursor-pointer hover:opacity-80 transition-opacity duration-200"
             alt="back"
+            width="50"
+            height="50"
           />
         </NavLink>
         <CustomText>How to play</CustomText>

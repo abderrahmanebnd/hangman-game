@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Progress from "./Progress";
 
 function RemainingTries() {
@@ -9,6 +8,8 @@ function RemainingTries() {
         className="w-6 sm:w-10"
         src="/assets/images/icon-heart.svg"
         alt="heart"
+        width="32"
+        height="32"
       />
     </div>
   );

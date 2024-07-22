@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { pickedCategory } from "../slices/game";
+import { startGame } from "../slices/game";
 import RandomLetters from "./RandomLetters";
 import WordLetters from "./WordLetters";
 import { addRandomLetters } from "../utils/helpers";
@@ -13,7 +13,7 @@ function BodyGame() {
   const randomLetters = addRandomLetters(randomWord);
 
   useEffect(() => {
-    // Dispatch pickedCategory action when component mounts to ensure randomWord is generated
+    // Dispatch startGame action when component mounts to ensure randomWord is generated
     if (!category && categoryData.length === 0) {
       // Fetch category and categoryData from localStorage if not already in Redux state
       const storedCategory = localStorage.getItem("selectedCategory");
@@ -21,7 +21,7 @@ function BodyGame() {
         localStorage.getItem("selectedCategoryData")
       );
       if (storedCategory && storedCategoryData) {
-        dispatch(pickedCategory(storedCategory, storedCategoryData));
+        dispatch(startGame(storedCategory, storedCategoryData));
       }
     }
   }, [category, categoryData, dispatch]);

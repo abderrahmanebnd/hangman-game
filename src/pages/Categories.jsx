@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import HeaderOnScroll from "../ui/HeaderOnScroll";
-import CustomText from "../ui/CustomText";
+import HeaderOnScroll from "../ui/common/HeaderOnScroll";
+import CustomText from "../ui/common/CustomText";
 import Category from "../ui/Category";
 
 function Categories() {
@@ -25,6 +25,8 @@ function Categories() {
             src="/assets/images/icon-back.svg"
             className="w-12 sm:w-16 cursor-pointer hover:opacity-80 transition-opacity duration-200"
             alt="back"
+            width="50"
+            height="50"
           />
         </NavLink>
         <CustomText>Pick a Category</CustomText>

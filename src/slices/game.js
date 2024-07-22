@@ -7,13 +7,14 @@ const initialState = {
   guessedLetters: [],
   tries: 0,
   loser: false,
+  winner: false, // Add winner state
 };
 
 const gameSlice = createSlice({
   name: "gameSlice",
   initialState,
   reducers: {
-    pickedCategory: {
+    startGame: {
       prepare(category, data) {
         const storedCategoryData = localStorage.getItem("selectedCategoryData");
         const selectedData =
@@ -30,7 +31,10 @@ const gameSlice = createSlice({
         state.category = category;
         state.categoryData = categoryData;
         state.randomWord = randomWord;
-        state.guessedLetters = []; // <-- Reset guessed letters when new word is picked
+        state.guessedLetters = [];
+        state.tries = 0;
+        state.winner = false;
+        state.loser = false;
         localStorage.setItem("selectedCategory", category);
         localStorage.setItem(
           "selectedCategoryData",
@@ -44,8 +48,15 @@ const gameSlice = createSlice({
     guessLetter(state, action) {
       state.guessedLetters.push(action.payload);
     },
+    addTry(state) {
+      state.tries += 1;
+    },
+    setWinner(state) {
+      state.winner = true;
+    },
   },
 });
 
 export default gameSlice.reducer;
-export const { pickedCategory, toggleLoser, guessLetter } = gameSlice.actions;
+export const { startGame, toggleLoser, guessLetter, addTry, setWinner } =
+  gameSlice.actions;
