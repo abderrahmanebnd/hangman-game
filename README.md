@@ -3,12 +3,12 @@
 This is a solution to the [Hangman game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/hangman-game-rsQiSVLGWn). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
+
 - [The challenge](#the-challenge)
 - [Screenshot](#screenshot)
 - [My process](#my-process)
 - [Built with](#built-with)
 - [Author](#author)
-
 
 ### The challenge
 
@@ -31,12 +31,15 @@ Not available yet :{
 
 ### Links
 
-Not available yet :{
+### [Demo Link](https://hangman-game-iota-two.vercel.app/) 🔗
 
 ### Built with
 
-- [React](https://reactjs.org/) - JS library
-- [TailwindCSS](https://tailwindcss.com/) - For styles
+- #### **React JS**
+- #### **Redux Toolkit - State management**
+- #### **Framer-motion - For Animation**
+- #### **TailwindCSS - For Styling**
 
 ## Author
-Not built yet :{
+
+- **Abderrahmane bnd** - **[Linkedin](https://www.linkedin.com/in/bendaia-abderrahmane-80b3a027b/)**
