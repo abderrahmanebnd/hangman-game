@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setWinner } from "../slices/game";
+import { m, AnimatePresence } from "framer-motion";
+
+const letterVar = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
 
 function WordLetters() {
   const { randomWord, guessedLetters } = useSelector((store) => store.game);
@@ -35,7 +41,20 @@ function WordLetters() {
   }, [guessedLetters, dispatch, displayWord, hasInteracted]);
 
   return (
-    <ul className="container m-auto flex justify-center items-center gap-1 px-10 flex-wrap">
+    <m.ul
+      className="container m-auto flex justify-center items-center gap-1 px-10 flex-wrap"
+      initial={{
+        y: -20,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        delay: 0.3,
+      }}
+    >
       {displayWord.map((letter, index) => {
         return (
           <li
@@ -48,11 +67,23 @@ function WordLetters() {
               guessedLetters.includes(letter) ? "opacity-100" : "opacity-60"
             }`}
           >
-            {guessedLetters.includes(letter) ? letter : ""}
+            <AnimatePresence>
+              {guessedLetters.includes(letter) && (
+                <m.span
+                  key={letter + index} // Ensure unique key
+                  variants={letterVar}
+                  initial="hidden"
+                  animate="show"
+                  exit="hidden"
+                >
+                  {letter}
+                </m.span>
+              )}
+            </AnimatePresence>
           </li>
         );
       })}
-    </ul>
+    </m.ul>
   );
 }
 

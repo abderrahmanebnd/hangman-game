@@ -3,7 +3,7 @@ import HeaderGame from "../ui/HeaderGame";
 
 function Game() {
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen overflow-x-hidden">
       <HeaderGame />
       <BodyGame />
     </section>
